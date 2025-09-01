@@ -3,13 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soluciones Integrales Eléctricas Araucanía</title>
-    <link href="./dist/output.css" rel="stylesheet">
+    <meta name="description" content="Servicios eléctricos especializados en La Araucanía. Certificación eléctrica, instalaciones certificadas, canalización, aumentos de potencia y mantenimiento integral. Contacto: +56 9 3517 2731">
+    <meta name="keywords" content="electricidad, araucanía, certificación eléctrica, instalaciones eléctricas, canalización, aumento potencia, reparaciones eléctricas, mantenimiento eléctrico, angol, temuco">
+    <meta name="author" content="Soluciones Integrales Eléctricas Araucanía">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Soluciones Integrales Eléctricas Araucanía">
+    <meta property="og:description" content="Servicios eléctricos especializados en La Araucanía. Certificación, instalaciones y mantenimiento integral.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soluciones-electricas-araucania.cl">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Soluciones Integrales Eléctricas Araucanía - Servicios Eléctricos Especializados</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="recursos/logosoluciones.png">
+    <link rel="apple-touch-icon" href="recursos/logosoluciones.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="recursos/logosoluciones.png" as="image">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FFD700">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Soluciones Eléctricas">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'amarillo': '#FFD700',
+                        'azul-oscuro': '#1e3a8a',
+                        'azul-claro': '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados */
+        .btn-primary {
+            @apply bg-yellow-400 text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors transform hover:scale-105 shadow-lg;
+        }
+        
+        .card-service {
+            @apply bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow;
+        }
+        
+        .section-title {
+            @apply text-4xl font-bold text-gray-900 mb-4;
+        }
+        
+        .section-subtitle {
+            @apply text-lg text-gray-600;
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .backdrop-blur-custom {
+            backdrop-filter: blur(8px);
+        }
+        
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Fuente personalizada */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        /* Animaciones personalizadas */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .animate-fade-in-up:nth-child(1) { animation-delay: 0.1s; }
+        .animate-fade-in-up:nth-child(2) { animation-delay: 0.2s; }
+        .animate-fade-in-up:nth-child(3) { animation-delay: 0.3s; }
+        .animate-fade-in-up:nth-child(4) { animation-delay: 0.4s; }
+        .animate-fade-in-up:nth-child(5) { animation-delay: 0.5s; }
+        .animate-fade-in-up:nth-child(6) { animation-delay: 0.6s; }
+        
+        /* Mejoras en hover para tarjetas */
+        .card-service:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Transiciones suaves */
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        /* Estilos mejorados para el botón principal */
+        .hero-button {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .hero-button:hover::before {
+            left: 100%;
+        }
+        
+        .hero-button:hover {
+            box-shadow: 0 15px 35px rgba(251, 191, 36, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body class="bg-white">
     <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent" id="navbar">
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black bg-opacity-90 backdrop-blur-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 lg:h-20">
                 <!-- Logo -->
@@ -19,15 +156,15 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-8">
-                                    <a href="#inicio" class="text-white font-medium hover:text-yellow-400 transition-colors">Inicio</a>
-                <a href="#servicios" class="text-white font-medium hover:text-yellow-400 transition-colors">Servicios</a>
-                <a href="#ubicacion" class="text-white font-medium hover:text-yellow-400 transition-colors">Ubicación</a>
-                <a href="#contacto" class="text-white font-medium hover:text-yellow-400 transition-colors">Contacto</a>
+                    <a href="#inicio" class="text-white font-medium hover:text-yellow-400 transition-colors">Inicio</a>
+                    <a href="#servicios" class="text-white font-medium hover:text-yellow-400 transition-colors">Servicios</a>
+                    <a href="#ubicacion" class="text-white font-medium hover:text-yellow-400 transition-colors">Ubicación</a>
+                    <a href="#contacto" class="text-white font-medium hover:text-yellow-400 transition-colors">Contacto</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden text-white p-2" id="mobile-menu-button">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button class="lg:hidden text-white p-2" id="mobile-menu-button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
@@ -35,7 +172,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div class="lg:hidden bg-black bg-opacity-95 backdrop-blur-custom" id="mobile-menu" style="display: none;">
+        <div class="lg:hidden bg-black bg-opacity-95 backdrop-blur-custom" id="mobile-menu" style="display: none;" aria-hidden="true">
             <div class="px-4 py-6 space-y-4">
                 <a href="#inicio" class="block text-white font-medium hover:text-yellow-400 transition-colors py-2">Inicio</a>
                 <a href="#servicios" class="block text-white font-medium hover:text-yellow-400 transition-colors py-2">Servicios</a>
@@ -74,8 +211,14 @@
                         específicas de nuestros clientes en toda la región de La Araucanía.
                     </p>
                     
-                    <button class="btn-primary" onclick="window.open('https://wa.me/56935172731?text=Hola! Me interesa obtener más información sobre sus servicios eléctricos en La Araucanía.', '_blank')">
-                        Contáctame
+                    <button class="hero-button group relative inline-flex items-center justify-center px-8 py-4 text-black font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 border-2 border-yellow-300" onclick="window.open('https://wa.me/56935172731?text=Hola! Me interesa obtener más información sobre sus servicios eléctricos en La Araucanía.', '_blank')">
+                        <span class="relative z-10 flex items-center space-x-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                            <span>Contáctame</span>
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-yellow-300 to-yellow-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </button>
                 </div>
 
@@ -102,7 +245,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Certificación Eléctrica -->
-                <div class="card-service">
+                <div class="card-service animate-fade-in-up">
                     <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -122,7 +265,7 @@
                 </div>
 
                 <!-- Instalaciones Eléctricas Certificadas -->
-                <div class="card-service">
+                <div class="card-service animate-fade-in-up">
                     <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -146,7 +289,7 @@
                 </div>
 
                 <!-- Canalización -->
-                <div class="card-service">
+                <div class="card-service animate-fade-in-up">
                     <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
@@ -166,7 +309,7 @@
                 </div>
 
                 <!-- Aumentos de Potencia -->
-                <div class="card-service">
+                <div class="card-service animate-fade-in-up">
                     <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -186,11 +329,10 @@
                 </div>
 
                 <!-- Reparaciones Eléctricas -->
-                <div class="card-service">
+                <div class="card-service animate-fade-in-up">
                     <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Reparaciones Eléctricas</h3>
@@ -207,7 +349,7 @@
                 </div>
 
                 <!-- Mantenimiento Integral -->
-                <div class="card-service">
+                <div class="card-service animate-fade-in-up">
                     <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
@@ -454,6 +596,13 @@
         </div>
     </div>
 
+    <!-- Botón Volver Arriba -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-yellow-400 text-black p-3 rounded-full shadow-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-110 opacity-0 invisible z-40" aria-label="Volver arriba">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
     <!-- Footer -->
     <footer class="bg-black text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -466,68 +615,60 @@
     <!-- Responsive adjustments -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Cache DOM elements
             const navbar = document.getElementById('navbar');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const navLinks = document.querySelectorAll('nav a');
             const contactForm = document.getElementById('contact-form');
 
-            // Mobile menu toggle
-            mobileMenuButton.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const isOpen = mobileMenu.style.display !== 'none';
-                mobileMenu.style.display = isOpen ? 'none' : 'block';
-                
-                // Change icon
-                if (isOpen) {
-                    mobileMenuButton.innerHTML = `
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    `;
-                } else {
-                    mobileMenuButton.innerHTML = `
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    `;
-                }
-            });
+            // SVG icons for mobile menu
+            const menuIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>`;
+            
+            const closeIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>`;
 
-            // Navbar background on scroll (only for desktop)
-            window.addEventListener('scroll', function() {
-                if (window.innerWidth >= 1024) { // Only apply to desktop
-                    if (window.scrollY > 50) {
-                        navbar.classList.add('bg-black', 'bg-opacity-90', 'backdrop-blur-sm');
-                        navbar.classList.remove('bg-transparent');
-                    } else {
-                        navbar.classList.remove('bg-black', 'bg-opacity-90', 'backdrop-blur-sm');
-                        navbar.classList.add('bg-transparent');
-                    }
-                }
-            });
+            // Mobile menu toggle with better UX and accessibility
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isOpen = mobileMenu.style.display !== 'none';
+                    mobileMenu.style.display = isOpen ? 'none' : 'block';
+                    mobileMenu.style.ariaHidden = isOpen ? 'true' : 'false';
+                    mobileMenuButton.innerHTML = isOpen ? menuIcon : closeIcon;
+                    mobileMenuButton.setAttribute('aria-expanded', !isOpen);
+                });
+            }
 
-            // Smooth scrolling for navigation links
+            // Smooth scrolling for navigation links with error handling
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const href = this.getAttribute('href');
-                    if (href !== '#') {
-                        const targetSection = document.querySelector(href);
-                        if (targetSection) {
-                            const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
-                            window.scrollTo({
-                                top: offsetTop,
-                                behavior: 'smooth'
-                            });
-                            
-                            // Close mobile menu if open
-                            mobileMenu.style.display = 'none';
-                            mobileMenuButton.innerHTML = `
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                                </svg>
-                            `;
+                    
+                    if (href && href !== '#') {
+                        try {
+                            const targetSection = document.querySelector(href);
+                            if (targetSection) {
+                                const offsetTop = targetSection.offsetTop - 80;
+                                window.scrollTo({
+                                    top: offsetTop,
+                                    behavior: 'smooth'
+                                });
+                                
+                                // Close mobile menu if open
+                                if (mobileMenu && mobileMenu.style.display !== 'none') {
+                                    mobileMenu.style.display = 'none';
+                                    if (mobileMenuButton) {
+                                        mobileMenuButton.innerHTML = menuIcon;
+                                    }
+                                }
+                            }
+                        } catch (error) {
+                            console.warn('Error scrolling to section:', error);
                         }
                     }
                 });
@@ -535,34 +676,39 @@
 
             // Close mobile menu when clicking outside
             document.addEventListener('click', function(e) {
-                if (!navbar.contains(e.target) && mobileMenu.style.display !== 'none') {
+                if (navbar && mobileMenu && !navbar.contains(e.target) && mobileMenu.style.display !== 'none') {
                     mobileMenu.style.display = 'none';
-                    mobileMenuButton.innerHTML = `
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    `;
+                    if (mobileMenuButton) {
+                        mobileMenuButton.innerHTML = menuIcon;
+                    }
                 }
             });
 
-            // WhatsApp form submission
+            // WhatsApp form submission with validation
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    const nombre = document.getElementById('nombre').value;
-                    const telefono = document.getElementById('telefono').value;
-                    const email = document.getElementById('email').value; 
-                    const servicio = document.getElementById('servicio').value;
-                    const descripcion = document.getElementById('descripcion').value;
-                    
-                    // Create WhatsApp message
-                    const message = `Hola! Me interesa solicitar un presupuesto para servicios eléctricos.
+                    try {
+                        const nombre = document.getElementById('nombre')?.value?.trim();
+                        const telefono = document.getElementById('telefono')?.value?.trim();
+                        const email = document.getElementById('email')?.value?.trim();
+                        const servicio = document.getElementById('servicio')?.value;
+                        const descripcion = document.getElementById('descripcion')?.value?.trim();
+                        
+                        // Basic validation
+                        if (!nombre || !telefono || !servicio || !descripcion) {
+                            alert('Por favor, completa todos los campos obligatorios.');
+                            return;
+                        }
+                        
+                        // Create WhatsApp message
+                        const message = `Hola! Me interesa solicitar un presupuesto para servicios eléctricos.
 
 *Información del Cliente:*
 • Nombre: ${nombre}
 • Teléfono: ${telefono}
-• Email: ${email}
+• Email: ${email || 'No proporcionado'}
 
 *Servicio Solicitado:*
 • Tipo: ${servicio}
@@ -572,15 +718,61 @@ ${descripcion}
 
 Agradezco su atención y espero su respuesta.`;
 
+                        const encodedMessage = encodeURIComponent(message);
+                        const whatsappNumber = '56935172731';
+                        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                        
+                        // Open WhatsApp
+                        window.open(whatsappURL, '_blank');
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                    } catch (error) {
+                        console.error('Error submitting form:', error);
+                        alert('Hubo un error al procesar el formulario. Por favor, inténtalo de nuevo.');
+                    }
+                });
+            }
 
-                    const encodedMessage = encodeURIComponent(message);
-                    
-                    
-                    const whatsappNumber = '56935172731'; 
-                    
-                    // Open WhatsApp
-                    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-                    window.open(whatsappURL, '_blank');
+            // Performance optimization: Throttle scroll events
+            let ticking = false;
+            function updateNavbar() {
+                if (window.innerWidth >= 1024) {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('bg-black', 'bg-opacity-90', 'backdrop-blur-sm');
+                    } else {
+                        navbar.classList.remove('bg-black', 'bg-opacity-90', 'backdrop-blur-sm');
+                    }
+                }
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(updateNavbar);
+                    ticking = true;
+                }
+            });
+
+            // Back to top button functionality
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        backToTopButton.classList.remove('opacity-0', 'invisible');
+                        backToTopButton.classList.add('opacity-100', 'visible');
+                    } else {
+                        backToTopButton.classList.add('opacity-0', 'invisible');
+                        backToTopButton.classList.remove('opacity-100', 'visible');
+                    }
+                });
+
+                backToTopButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 });
             }
         });
