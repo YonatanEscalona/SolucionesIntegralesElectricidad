@@ -208,21 +208,28 @@ h2.title{font-size:clamp(1.9rem,4vw,3rem);font-weight:700;margin:16px 0 0}
 }
 
 /* ---------- Servicios ---------- */
-.grid-3{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
-@media(min-width:1100px){.grid-3{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.card{
-  position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);
-  padding:30px 26px;transition:border-color .22s var(--ease),transform .22s var(--ease),background-color .22s var(--ease);
-  height:100%;
+.services-heading{max-width:720px}
+.services-heading .lead{max-width:54ch}
+.services-layout{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);align-items:start;gap:clamp(28px,5vw,72px);margin-top:46px}
+.service-photo{margin:0}
+.service-photo img{width:100%;height:clamp(480px,48vw,600px);object-fit:cover;object-position:center;border-radius:var(--r-lg);border:1px solid var(--line-strong)}
+.service-list{border-top:1px solid var(--line-strong)}
+.service-item{display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;padding:19px 0;border-bottom:1px solid var(--line)}
+.service-number{font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:600;color:var(--amber);padding-top:4px}
+.service-item h3{font-size:clamp(1.15rem,1.9vw,1.4rem);font-weight:600}
+.service-item p{margin-top:5px;color:var(--muted);font-size:14px;line-height:1.55;max-width:52ch}
+.service-item a{display:inline-block;margin-top:7px;color:var(--amber);font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.service-action{margin-top:25px}
+@media(max-width:760px){
+  .services-layout{grid-template-columns:1fr;gap:24px;margin-top:30px}
+  .service-photo img{height:clamp(280px,85vw,440px);object-position:center 54%}
+  .service-item{padding:17px 0}
 }
-.card:hover{border-color:rgba(255,192,30,.4);transform:translateY(-4px);background:var(--panel-2)}
 .card-ico{
   width:50px;height:50px;border-radius:14px;display:grid;place-items:center;
   background:rgba(255,192,30,.12);border:1px solid rgba(255,192,30,.28);color:var(--amber);margin-bottom:20px;
 }
 .card-ico svg{width:24px;height:24px}
-.card h3{font-size:1.2rem;font-weight:600;margin-bottom:12px}
-.card p{color:var(--muted);font-size:14.5px}
 .ticks{display:flex;flex-direction:column;gap:9px;margin-top:14px}
 .ticks li{position:relative;padding-left:24px;color:var(--muted);font-size:14.5px}
 @media(min-width:620px){
@@ -517,122 +524,41 @@ h2.title{font-size:clamp(1.9rem,4vw,3rem);font-weight:700;margin:16px 0 0}
   <!-- ============ SERVICIOS ============ -->
   <section class="section" id="servicios" aria-labelledby="servicios-h">
     <div class="wrap">
-      <div class="head-center reveal">
-        <span class="eyebrow">Nuestros servicios</span>
-        <h2 class="title" id="servicios-h">Soluciones eléctricas <em>integrales</em></h2>
-        <p class="lead">Cubrimos el ciclo completo: proyecto, ejecución, certificación y mantención. Todo bajo la normativa eléctrica vigente.</p>
+      <div class="services-heading reveal">
+        <span class="eyebrow">Qué hacemos</span>
+        <h2 class="title" id="servicios-h">Del plano al <em>tablero.</em></h2>
+        <p class="lead">Instalaciones, energía solar, electromovilidad y mantención en La Araucanía.</p>
       </div>
 
-      <div class="grid-3" style="margin-top:52px">
-        <article class="card reveal">
-          <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Declaraciones SEC</h3>
-          <p>Revisamos los requisitos técnicos y la documentación que corresponde a cada proyecto.</p>
-          <ul class="ticks">
-            <li>TE1: instalaciones eléctricas interiores</li>
-            <li>TE4: generadoras residenciales, cuando corresponde</li>
-            <li>TE6: infraestructura de carga de vehículos eléctricos</li>
-          </ul>
-        </article>
+      <div class="services-layout">
+        <figure class="service-photo reveal">
+          <img src="recursos/actualizaciontblero.webp" alt="Tablero eléctrico con sus protecciones y cableado durante una instalación" width="1076" height="1336" loading="lazy" decoding="async">
+        </figure>
 
-        <article class="card reveal">
-          <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="6" r="2.5"/><path d="M2 19h20M5 10h10l3 9H2l3-9zM7 10l-1 9M11 10v9M15 10l2 9M4 14h13"/></svg></div>
-          <h3>Energía solar fotovoltaica</h3>
-          <p>Soluciones para generar electricidad en viviendas y negocios, dimensionadas según consumo y condiciones del lugar.</p>
-          <ul class="ticks">
-            <li>Evaluación de consumo, cubierta y orientación</li>
-            <li>Paneles, inversor y protecciones eléctricas</li>
-            <li>Orientación para TE4 y conexión a red, si aplica</li>
-          </ul>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zM7 7h7v6H7zM10 16h1"/><path d="M17 8h2l2 2v5a2 2 0 01-2 2h-2"/></svg></div>
-          <h3>Electromovilidad</h3>
-          <p>Infraestructura de carga para vehículos eléctricos en hogares, estacionamientos y comercios.</p>
-          <ul class="ticks">
-            <li>Revisión de capacidad y potencia disponible</li>
-            <li>Cargadores, circuitos y protecciones</li>
-            <li>Documentación para declaración SEC TE6</li>
-          </ul>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M10 21v-5h4v5"/></svg></div>
-          <h3>Instalaciones certificadas</h3>
-          <p>Proyectos residenciales, comerciales, industriales e institucionales.</p>
-          <ul class="ticks">
-            <li>Tiendas y locales comerciales</li>
-            <li>Colegios e instituciones educativas</li>
-            <li>Postas, CESFAM y hospitales</li>
-          </ul>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10a3 3 0 013 3v4a3 3 0 003 3h0"/><rect x="2" y="4" width="4" height="6" rx="1"/><rect x="18" y="14" width="4" height="6" rx="1"/></svg></div>
-          <h3>Canalización</h3>
-          <p>Rutas de cableado ordenadas, seguras y pensadas para crecer.</p>
-          <ul class="ticks">
-            <li>Canalización embutida en paredes y techos</li>
-            <li>Canalización sobrepuesta en superficies visibles</li>
-            <li>Bandejas, ductos y escalerillas</li>
-          </ul>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
-          <h3>Aumentos de potencia</h3>
-          <p>Adecuamos tu empalme y tablero cuando la demanda crece.</p>
-          <ul class="ticks">
-            <li>Evaluación de requerimientos de energía</li>
-            <li>Adaptación para mayor carga eléctrica</li>
-            <li>Tableros monofásicos y trifásicos</li>
-          </ul>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 01-5 5L4 17v3h3l5.7-5.7a4 4 0 015-5l-2.4 2.4 2.1 2.1L20 11.4a4 4 0 00-5.3-5.1z"/></svg></div>
-          <h3>Reparaciones eléctricas</h3>
-          <p>Diagnóstico rápido y solución definitiva, sin parches.</p>
-          <ul class="ticks">
-            <li>Diagnóstico y reparación de fallas</li>
-            <li>Sustitución de componentes eléctricos</li>
-            <li>Servicio de emergencia 24/7</li>
-          </ul>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l4-4 3 3 5-6 6 7"/><path d="M3 21h18"/><circle cx="7" cy="6" r="2"/></svg></div>
-          <h3>Mantenimiento integral</h3>
-          <p>Planes periódicos para evitar detenciones y riesgos.</p>
-          <ul class="ticks">
-            <li>Mantenimiento preventivo y correctivo</li>
-            <li>Revisión periódica de sistemas</li>
-            <li>Informes con evidencia de cada visita</li>
-          </ul>
-        </article>
-      </div>
-
-      <!-- capacidades -->
-      <div class="panel reveal" style="margin-top:26px">
-        <div class="split-2">
-          <div>
-            <p class="mini-title">Servicios principales</p>
-            <ul class="ticks">
-              <li>Gestiones y extensión de línea en MT y BT</li>
-              <li>Instalaciones eléctricas domiciliarias e industriales</li>
-              <li>Tableros eléctricos monofásicos y trifásicos</li>
-            </ul>
+        <div>
+          <div class="service-list">
+            <article class="service-item reveal">
+              <span class="service-number" aria-hidden="true">01</span>
+              <div><h3>Instalaciones y tableros</h3><p>Para viviendas, comercios e industria. Canalización, empalmes, líneas MT/BT y aumentos de potencia.</p></div>
+            </article>
+            <article class="service-item reveal">
+              <span class="service-number" aria-hidden="true">02</span>
+              <div><h3>Energía solar</h3><p>Evaluamos tu consumo y diseñamos sistemas con paneles, inversor y protecciones.</p></div>
+            </article>
+            <article class="service-item reveal">
+              <span class="service-number" aria-hidden="true">03</span>
+              <div><h3>Carga de vehículos eléctricos</h3><p>Cargadores, circuitos y protecciones para hogares y comercios.</p></div>
+            </article>
+            <article class="service-item reveal">
+              <span class="service-number" aria-hidden="true">04</span>
+              <div><h3>Mantención y reparaciones</h3><p>Diagnosticamos fallas y realizamos mantenimiento preventivo, correctivo y de emergencia.</p></div>
+            </article>
+            <article class="service-item reveal">
+              <span class="service-number" aria-hidden="true">05</span>
+              <div><h3>Declaraciones SEC</h3><p>Te orientamos con los antecedentes técnicos para TE1, TE4 o TE6, según tu proyecto.</p><a href="#certificaciones">Ver declaraciones SEC</a></div>
+            </article>
           </div>
-          <div>
-            <p class="mini-title">Especialidades</p>
-            <ul class="ticks">
-              <li>Proyecciones y planos eléctricos</li>
-              <li>Proyectos fotovoltaicos y de electromovilidad</li>
-              <li>Orientación para declaraciones SEC TE1, TE4 y TE6</li>
-              <li>Soluciones eléctricas integrales llave en mano</li>
-            </ul>
-          </div>
+          <a class="btn btn-primary service-action reveal" href="https://wa.me/56935172731?text=Hola%2C%20quiero%20consultar%20por%20un%20proyecto%20el%C3%A9ctrico." target="_blank" rel="noopener">Consultar mi proyecto</a>
         </div>
       </div>
     </div>
