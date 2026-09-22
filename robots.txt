@@ -1,8 +1,2 @@
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://soluciones-electricas-araucania.cl/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
