@@ -16,9 +16,9 @@
 <meta property="og:title" content="Soluciones Integrales Eléctricas Araucanía | Solar y electromovilidad">
 <meta property="og:description" content="Instalaciones eléctricas, proyectos fotovoltaicos y carga de vehículos eléctricos en La Araucanía. Orientación SEC TE1, TE4 y TE6.">
 <meta property="og:url" content="https://xn--solucioneselctricasangol-mfc.cl/">
-<meta property="og:image" content="https://xn--solucioneselctricasangol-mfc.cl/recursos/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://xn--solucioneselctricasangol-mfc.cl/recursos/hero-electricidad-real-1600.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1067">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" type="image/png" sizes="64x64" href="recursos/favicon.png">
@@ -29,9 +29,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="recursos/hero-electricista-1920.webp"
-      imagesrcset="recursos/hero-electricista-1200.webp 1200w, recursos/hero-electricista-1920.webp 1920w"
-      imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="recursos/hero-electricidad-real-1600.jpg" media="(min-width:900px)" fetchpriority="high">
+<link rel="preload" as="image" href="recursos/hero-electricidad-real-800.jpg" media="(max-width:899px)" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -170,37 +169,27 @@ h2.title{font-size:clamp(1.9rem,4vw,3rem);font-weight:700;margin:16px 0 0}
 .drawer .btn{margin-top:12px}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 56px;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:60% center}
-.hero-bg::after{
-  content:"";position:absolute;inset:0;
-  background:
-    linear-gradient(90deg,rgba(10,14,20,.96) 0%,rgba(10,14,20,.86) 38%,rgba(10,14,20,.45) 68%,rgba(10,14,20,.7) 100%),
-    linear-gradient(0deg,var(--ink) 2%,rgba(10,14,20,0) 45%);
-}
-.hero-grid{
-  position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:64px 64px;
-  mask-image:radial-gradient(circle at 20% 40%,#000 0%,transparent 65%);
-  -webkit-mask-image:radial-gradient(circle at 20% 40%,#000 0%,transparent 65%);
-}
-.hero-inner{max-width:720px}
+.hero{padding:112px 0 68px;background:var(--ink)}
+.hero-layout{display:grid;gap:clamp(28px,5vw,76px);align-items:center}
+.hero-copy{max-width:620px}
 .hero h1{
-  font-size:clamp(2.3rem,6.2vw,4.2rem);font-weight:700;margin:20px 0 0;letter-spacing:-.035em;
+  font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;line-height:1.04;letter-spacing:-.035em;
 }
-.hero h1 em{font-style:normal;color:var(--amber);display:block}
-.hero .lead{margin-top:22px;font-size:clamp(1rem,1.6vw,1.18rem);max-width:56ch}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;max-width:600px}
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:9px 14px;border-radius:999px;border:1px solid var(--line-strong);
-  background:rgba(255,255,255,.05);backdrop-filter:blur(6px);
-  font-size:13px;font-weight:500;color:var(--text);
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .lead{margin-top:24px;font-size:clamp(1rem,1.5vw,1.16rem);max-width:48ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero-photo{position:relative;margin:0;min-width:0;height:clamp(420px,48vw,650px);overflow:hidden;border-radius:var(--r)}
+.hero-photo picture,.hero-photo img{display:block;width:100%;height:100%}
+.hero-photo img{object-fit:cover;object-position:57% center}
+.hero-photo figcaption{position:absolute;left:14px;bottom:14px;padding:5px 10px;border-radius:6px;background:rgba(10,14,20,.75);color:#fff;font-size:11px}
+@media(min-width:900px){.hero-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:min(680px,calc(100svh - 180px))}}
+@media(max-width:899px){
+  .hero{padding:76px 0 64px}
+  .hero-layout{gap:32px}
+  .hero-photo{order:-1;height:clamp(240px,55vw,410px);margin-inline:-20px;border-radius:0}
+  .hero-photo img{object-position:54% center}
+  .hero h1{font-size:clamp(2.45rem,7.8vw,4rem)}
 }
-.badge svg{width:15px;height:15px;color:var(--amber);flex:none}
 
 /* barra de datos */
 .stats{border-block:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
@@ -486,39 +475,29 @@ h2.title{font-size:clamp(1.9rem,4vw,3rem);font-weight:700;margin:16px 0 0}
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="inicio">
-    <div class="hero-bg">
-      <img src="recursos/hero-electricista-1920.webp"
-           srcset="recursos/hero-electricista-1200.webp 1200w, recursos/hero-electricista-1920.webp 1920w"
-           sizes="100vw"
-           alt="Técnico eléctrico trabajando en un tablero de distribución durante la noche"
-           fetchpriority="high" width="1920" height="1047">
-    </div>
-    <div class="hero-grid" aria-hidden="true"></div>
-
     <div class="wrap">
-      <div class="hero-inner">
-        <span class="eyebrow">Instaladores autorizados SEC · Angol, La Araucanía</span>
-        <h1>Instalaciones eléctricas <em>certificadas y seguras</em></h1>
+      <div class="hero-layout">
+      <div class="hero-copy">
+        <h1>Soluciones eléctricas <em>en Angol.</em></h1>
         <p class="lead">
-          Desde la certificación para conexión en media tensión hasta el mantenimiento integral de tu
-          sistema eléctrico, proyectos fotovoltaicos y puntos de carga para vehículos eléctricos.
-          Trabajamos para hogares, comercios e instituciones en La Araucanía, con documentación técnica según cada proyecto.
+          Instalaciones, energía solar y cargadores para vehículos eléctricos en La Araucanía. Planificamos, ejecutamos y orientamos tus trámites SEC.
         </p>
 
         <div class="hero-actions">
           <a class="btn btn-wa" href="https://wa.me/56935172731?text=Hola!%20Me%20interesa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20el%C3%A9ctricos%20en%20La%20Araucan%C3%ADa." target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
-            Solicitar presupuesto
+            Cotizar mi proyecto
           </a>
-          <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+          <a class="btn btn-ghost" href="#servicios">Explorar servicios</a>
         </div>
-
-        <ul class="hero-badges">
-          <li class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Certificación SEC</li>
-          <li class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Solar y electromovilidad</li>
-          <li class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>200 km de cobertura</li>
-          <li class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg>Emergencias 24/7</li>
-        </ul>
+      </div>
+      <figure class="hero-photo">
+        <picture>
+          <source media="(max-width:899px)" srcset="recursos/hero-electricidad-real-800.jpg">
+          <img src="recursos/hero-electricidad-real-1600.jpg" alt="Manos de un electricista con guantes de protección sostienen un cable eléctrico" fetchpriority="high" width="1600" height="1067">
+        </picture>
+        <figcaption>Fotografía referencial · Jimmy Nilsson Masth / Unsplash</figcaption>
+      </figure>
       </div>
     </div>
   </section>
